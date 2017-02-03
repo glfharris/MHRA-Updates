@@ -1,5 +1,6 @@
 import pickle
 import datetime
+import json
 
 def load():
     with open("alerts.pickle", "rb") as f:
@@ -14,4 +15,5 @@ if __name__ == "__main__":
         for x in tmp:
             new.append(str(x))
         data[k] = new
-        print(new)
+    with open("alerts.json", "w") as f:
+        json.dump(data, f)
